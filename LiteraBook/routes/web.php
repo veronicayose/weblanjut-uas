@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\BooksToReads;
 use App\Http\Livewire\Notes;
 use App\Http\Livewire\Quotes;
+use App\Http\Livewire\Readings;
 use Illuminate\Http\Request;
 
 /*
@@ -26,5 +27,15 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('to-read', BooksToReads::class)->name('to-read');
+
+// Route::get('/note', function(Request $request){
+//     $user = $request->user();
+//     $toNote = $user->toNote();
+// });
+
 Route::get('note', Notes::class)->name('note');
 Route::get('quote', Quotes::class)->name('quote');
+Route::get('reading', Readings::class)->name('reading');
+Route::get('history', function () {
+    return view('livewire.history.history');
+})->name('history');
