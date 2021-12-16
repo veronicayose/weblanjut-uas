@@ -59,5 +59,12 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+    public function toRead() {
+        return $this->hasMany(BooksToRead::class, 'id_users');
+    }
+
+    public function toNote() {
+        return $this->hasMany(Note::class, 'id_users');
+    }
 
 }
