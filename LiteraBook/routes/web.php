@@ -5,6 +5,7 @@ use App\Http\Livewire\BooksToReads;
 use App\Http\Livewire\Notes;
 use App\Http\Livewire\Quotes;
 use App\Http\Livewire\Readings;
+use App\Http\Livewire\Historys;
 use Illuminate\Http\Request;
 
 /*
@@ -36,6 +37,4 @@ Route::get('to-read', BooksToReads::class)->name('to-read');
 Route::get('note', Notes::class)->name('note');
 Route::get('quote', Quotes::class)->name('quote');
 Route::get('reading', Readings::class)->name('reading');
-Route::get('history', function () {
-    return view('livewire.history.history');
-})->name('history');
+Route::get('history', Historys::class)->name('history');
