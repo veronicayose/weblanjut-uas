@@ -16,7 +16,7 @@ class CreateToReadTable extends Migration
         Schema::create('_to_read', function (Blueprint $table) {
             $table->id();
             $table->string('bookTitle');
-            $table->year('releaseYear');
+            $table->integer('releaseYear');
             $table->string('author');
             $table->integer('id_users')->default('1');
             $table->timestamps();

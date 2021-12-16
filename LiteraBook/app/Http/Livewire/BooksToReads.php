@@ -42,22 +42,25 @@ class BooksToReads extends Component
 
     public function store()
     {
-        $validateData = $this->validate([
-        'bookTitle' => 'required',
-        'releaseYear' => 'required',
-        'author' => 'required',
+        $this->validate([
+            'bookTitle' => 'required',
+            'releaseYear' => 'required',
+            'author' => 'required',
+        
         ]);
 
-        if ($this->books_id) {
-            BooksToRead::find($this->books_id)->update($validateData);
-        } else {            
-            BooksToRead::create($validateData);
-        }
+        BooksToRead::updateOrCreate(['id' => $this->books_id], [
+            'bookTitle' => $this->bookTitle,
+            'releaseYear' => $this->releaseYear,
+            'author' => $this->author,
+            
+        ]);
 
         session()->flash('message',
-        $this->books_id ? 'Book to Read is Updated' : 'Book to Read is Created');
-        
+            $this->books_id ? 'Book to Read is Updated.' : 'Book to Read is Created.');
+
         $this->closeModal();
+
         $this->resetInputFields();
     }
 
