@@ -18,7 +18,7 @@ class CreateNotesTable extends Migration
             $table->string('title');
             $table->string('bookTitle');
             $table->integer('pages');
-            $table->text('note');
+            $table->longText('note');
             $table->integer('id_users')->default('1');
             $table->timestamps();
         });
