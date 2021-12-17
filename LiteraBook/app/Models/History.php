@@ -9,9 +9,4 @@ class History extends Model
 {
     use HasFactory;
     public $table = 'reading';
-    /**
-     * The attributes that are mass assignable.
-     * 
-     * @var array
-     */
 }
