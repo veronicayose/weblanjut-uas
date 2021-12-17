@@ -27,9 +27,9 @@
                     <x-jet-nav-link href="{{ route('quote') }}" :active="request()->routeIs('quote')">
                         {{ __('Quotes') }}
                     </x-jet-nav-link>
-                    {{-- <x-jet-nav-link href="{{ route('history') }}" :active="request()->routeIs('history')">
+                    <x-jet-nav-link href="{{ route('history') }}" :active="request()->routeIs('history')">
                         {{ __('History') }}
-                    </x-jet-nav-link> --}}
+                    </x-jet-nav-link>
                 </div>
             </div>
 
