@@ -17,7 +17,7 @@
                         </div>
                     </div>
                 @endif
-                <button wire:click="create()" class="border border-gray-300 text-black font-bold py-2 px-4 rounded my-3">Add</button>
+                <x-jet-button wire:click="create()" class="py-2 px-4 rounded my-3">Add</x-jet-button>
                 @if($isOpen)
                     @include('livewire.notes.create-notes')
                 @endif
@@ -41,8 +41,8 @@
                                 <td class="border px-4 py-2">{{ $the_note->pages }}</td>
                                 <td class="border px-4 py-2">{{ $the_note->note }}</td>
                                 <td class="border px-4 py-2">
-                                <button wire:click="edit({{ $the_note->id }})" class="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded">Edit</button>
-                                <button wire:click="delete({{ $the_note->id }})" class="bg-red-500 hover:bg-red-700 text-black font-bold py-2 px-4 rounded">Delete</button>
+                                <button wire:click="edit({{ $the_note->id }})" class="border border-gray-300 bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded">Edit</button>
+                                <button wire:click="delete({{ $the_note->id }})" class="border border-gray-300 bg-red-500 hover:bg-red-700 text-black font-bold py-2 px-4 rounded">Delete</button>
                                 </td>
                             </tr>
                         @endforeach
